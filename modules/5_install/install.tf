@@ -64,6 +64,7 @@ locals {
     upgrade_vars = {
         upgrade_version = var.upgrade_version
         upgrade_channel = var.upgrade_channel
+        upgrade_image = var.upgrade_image
         pause_time      = var.upgrade_pause_time
         delay_time      = var.upgrade_delay_time
     }
