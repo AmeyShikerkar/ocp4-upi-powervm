@@ -331,6 +331,11 @@ variable "upgrade_channel" {
     default = ""
 }
 
+variable "upgrade_image" {
+        description = "Upgrade image having required image availble for cluster upgrade (quay.io/openshift-release-dev/ocp-release-nightly@,quay.io/openshift-release-dev/ocp-release@ ) eg. quay.io/openshift-release-dev/ocp-release-nightly@sha256:xxxxx"
+        default = ""
+}
+
 variable "upgrade_pause_time" {
     description = "Number of minutes to pause the playbook execution before starting to check the upgrade status once the upgrade command is executed."
     default = "90"
