@@ -217,7 +217,7 @@ variable "helpernode_repo" {
 variable "helpernode_tag" {
     description = "Set the branch/tag name or commit# for using ocp4-helpernode repo"
     # Checkout level for https://github.com/RedHatOfficial/ocp4-helpernode which is used for setting up services required on bastion node
-    default = "5eab3db53976bb16be582f2edc2de02f7510050d"
+    default = "dd8a0767c677fc862e45b6d70e5d04656ced5d28"
 }
 
 variable "install_playbook_repo" {
@@ -250,11 +250,11 @@ locals {
 ### OpenShift variables
 ################################################################
 variable "openshift_install_tarball" {
-    default = "https://mirror.openshift.com/pub/openshift-v4/ppc64le/clients/ocp-dev-preview/latest-4.6/openshift-install-linux.tar.gz"
+    default = "https://mirror.openshift.com/pub/openshift-v4/ppc64le/clients/ocp/stable-4.6/openshift-install-linux.tar.gz"
 }
 
 variable "openshift_client_tarball" {
-     default = "https://mirror.openshift.com/pub/openshift-v4/ppc64le/clients/ocp-dev-preview/latest-4.6/openshift-client-linux.tar.gz"
+     default = "https://mirror.openshift.com/pub/openshift-v4/ppc64le/clients/ocp/stable-4.6/openshift-client-linux.tar.gz"
 }
 
 variable "release_image_override" {
@@ -334,6 +334,11 @@ variable "upgrade_channel" {
 variable "upgrade_pause_time" {
     description = "Number of minutes to pause the playbook execution before starting to check the upgrade status once the upgrade command is executed."
     default = "90"
+}
+
+variable "upgrade_image" {
+    description = "Upgrade image having required image availble for cluster upgrade (quay.io/openshift-release-dev/ocp-release-nightly@,quay.io/openshift-release-dev/ocp-release@ ) eg. quay.io/openshift-release-dev/ocp-release-nightly@sha256:xxxxx"
+    default = ""
 }
 
 variable "upgrade_delay_time" {
